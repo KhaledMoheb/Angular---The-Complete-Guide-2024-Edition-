@@ -1,0 +1,7 @@
+<div>
+    <label for="username">Username</label>
+    <input id="username" name="username" [(ngModel)]="username" />
+  </div>
+<p>{{ username }}</p>
+<button [disabled]="isButtonDisabled" (click)="onButtonClicked()">Button</button>
+  

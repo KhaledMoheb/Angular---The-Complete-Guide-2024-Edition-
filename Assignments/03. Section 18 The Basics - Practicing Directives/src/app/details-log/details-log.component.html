@@ -1,0 +1,9 @@
+<button (click)="onButtonClicked()" type="button">{{ buttonText }}</button>
+<p *ngIf="isDisplayingDetails">'Secret Password = tuna'</p>
+<ol>
+    <li *ngFor="let item of logs; index as idx" 
+    [ngStyle]="getLogDataStyle(idx)" 
+    [ngClass]="{'white-text': shouldApplyWhiteText(idx)}">
+    {{item.message}} - {{ item.datetime | date:'medium' }}
+    </li>
+</ol>

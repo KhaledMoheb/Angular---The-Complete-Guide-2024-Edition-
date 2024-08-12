@@ -38,7 +38,7 @@ This assignment focuses on using services and dependency injection in Angular. Y
    - **Refactor with UsersService:**
      - Create a `UsersService` to manage the active and inactive users.
      - Move the logic for switching users between active and inactive states into the `UsersService`.
-     - Inject the `UsersService` into the components (`AppActiveUsersComponent` and `AppInactiveUsersComponent`) using Angular's dependency injection.
+     - Inject the `UsersService` into the components (`ActiveUsersComponent` and `InactiveUsersComponent`) using Angular's dependency injection.
 
    - **Add a CounterService:**
      - Create a `CounterService` to count and log the number of times users are switched between active and inactive states.
@@ -46,7 +46,7 @@ This assignment focuses on using services and dependency injection in Angular. Y
      - Inject the `CounterService` into the `UsersService` to manage counting logic centrally.
 
    - **Update Components:**
-     - Modify the `AppActiveUsersComponent` and `AppInactiveUsersComponent` to interact with the `UsersService` instead of directly managing users.
+     - Modify the `ActiveUsersComponent` and `InactiveUsersComponent` to interact with the `UsersService` instead of directly managing users.
      - Ensure that the services work correctly to update the UI when users are moved between states.
 
 ## Usage

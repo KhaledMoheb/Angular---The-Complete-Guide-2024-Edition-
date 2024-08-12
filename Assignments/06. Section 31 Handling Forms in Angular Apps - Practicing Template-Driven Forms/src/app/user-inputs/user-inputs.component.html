@@ -1,0 +1,66 @@
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <!-- Email Input -->
+    <div class="form-group">
+      <label for="email">Mail Address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        ngModel
+        required
+        email>
+      <span *ngIf="form.controls.email?.invalid && form.controls.email?.touched" class="text-danger">
+        Please enter a valid email address.
+      </span>
+    </div>
+
+    <!-- Subscription Dropdown -->
+    <div class="form-group">
+      <label for="subscription">Subscription</label>
+      <select
+        id="subscription"
+        name="subscription"
+        class="form-control"
+        ngModel
+        [ngModel]="defaultSubscription"
+        required>
+        <option value="Basic">Basic</option>
+        <option value="Advanced">Advanced</option>
+        <option value="Pro">Pro</option>
+      </select>
+    </div>
+
+    <!-- Password Input -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        ngModel
+        required>
+      <span *ngIf="form.controls.password?.invalid && form.controls.password?.touched" class="text-danger">
+        Password is required.
+      </span>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Submit</button>
+
+    <!-- Form Invalid Warning -->
+    <div *ngIf="form.invalid && form.touched" class="text-danger mt-3">
+      Please correct the errors in the form.
+    </div>
+  </form>
+
+  <!-- Display form data after submission -->
+  <div *ngIf="submitted" class="mt-4">
+    <h4>Your Form Data:</h4>
+    <p>Email: {{ user.email }}</p>
+    <p>Subscription: {{ user.subscription }}</p>
+    <p>Password: {{ user.password }}</p>
+  </div>
+</div>
